@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule,Routes } from '@angular/router';
 console.log(RouterModule);
-const appRoutes:Poutes = [
+const appRoutes:Routes = [
     {
         path:'',
         redirectTo:'home',
