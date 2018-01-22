@@ -9,8 +9,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 //import { AboutComponent } from './about/about.component';
 
+/*const About = require('./about/about.module');
+console.log('0',About);*/
+
 import { RouterModule,Routes } from '@angular/router';
-console.log(RouterModule);
+console.log(FormsModule);
 const appRoutes:Routes = [
     {
         path:'',
@@ -22,11 +25,12 @@ const appRoutes:Routes = [
     },{
         path:'about',
         //component:AboutComponent
-        loadChildren:()=> new Promise(resolve => {
-            (require as any).ensure([],(require:any) => {
+        /*loadChildren:()=> new Promise(resolve => {
+            require.ensure([],(require:any) => {
                 resolve(require('./about/about.module').AboutModule);
             })
-        })
+        })*/
+        loadChildren:'./about/about.module#AboutModule'
     }
 ];
 
@@ -38,6 +42,7 @@ const appRoutes:Routes = [
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [],

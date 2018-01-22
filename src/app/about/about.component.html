@@ -1,3 +1,20 @@
 <p>
-  about works!
+<!-- <md-slider></md-slider> -->
+<canvas
+   baseChart
+   [chartType]="'line'"
+   [datasets]="chartData"
+   [labels]="chartLabels"
+   [options]="chartOptions"
+   [legend]="true"
+   (chartClick)="onChartClick($event)">
+ </canvas>
 </p>
+<div>
+    <h6 [title]="firstName">{{firstName}}</h6>
+    <input type="text" [(ngModel)]="firstName" [name]="firstName"/>
+    <ul>
+        <li *ngFor="let belle of belleArray" [ngStyle]="{'color':'red'}">{{belle.name}}</li>
+    </ul>
+    <button (click)="click()">点我</button>
+</div>
